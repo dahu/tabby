@@ -1,3 +1,19 @@
+" Fix the non-orthogonal behaviour of gt vs gT
+" gt now moves forward [count] number of tabs (default 1)
+" (so,   3gt   moves forward 3 tabs)
+" gT retains its default behaviour of moving backward [count] tabs
+" a new Gt map replaces the old gt behaviour of jumping to a tab by number
+" (so,   3Gt   moves to tab 3)
+function! TabForward(nr)
+  let lastpage = tabpagenr('$')
+  let newpage = (tabpagenr() + a:nr) % lastpage
+  let newpage = newpage == 0 ? lastpage : newpage
+  exe "tabn " . newpage
+endfunction
+
+nnoremap gt :<C-U>call TabForward(v:count1)<CR>
+nnoremap Gt :<C-U>exe "tabn " . v:count<CR>
+
 " Preserves current tab and window numbers
 function! TabAltSet()
   let g:tabalt = tabpagenr()
@@ -16,7 +32,7 @@ function! TabAlt(tabnum)
   endif
 endfunction
 
-augroup  Tabs
+augroup  Tabby
   au!
   au TabLeave * call TabAltSet()
 augroup END
