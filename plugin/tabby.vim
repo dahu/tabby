@@ -12,9 +12,11 @@ function! TabForward(nr)
 endfunction
 
 nnoremap gt :<C-U>call TabForward(v:count1)<CR>
-nnoremap Gt :<C-U>exe "tabn " . v:count<CR>
+nnoremap gn :<C-U>exe "tabn " . v:count<CR>
 
 " Preserves current tab and window numbers
+let g:tabalt = 1
+let g:winalt = 1
 function! TabAltSet()
   let g:tabalt = tabpagenr()
   let g:winalt = winnr()
