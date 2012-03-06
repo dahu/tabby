@@ -49,5 +49,5 @@ nnoremap <C-End> :<C-U>call TabAlt(v:count)<CR>
 nnoremap <C-Home> :<C-U>exe ":tabn ".v:count1<CR>
 " NOTE: 1<C-End> == 1<C-Home> == <C-Home>
 
-nnoremap <C-PageDown> :tabn<CR>
-nnoremap <C-PageUp> :tabp<CR>
+nmap <C-PageDown> gt
+nnoremap <C-PageUp>   :tabp<CR>
