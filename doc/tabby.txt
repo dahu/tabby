@@ -1,0 +1,25 @@
+*tabby.txt*	Tabbing Righteously
+
+
+			VIM REFERENCE MANUAL	by Barry Arthur
+
+
+Help on using Tabby                                                    *tabby*
+
+
+Tabby fixes the non-orthogonal behaviour of |gt| vs |gT|.
+
+`gt` now moves forward [count] number of tabs (default 1)
+(so,   `3gt`   moves forward 3 tabs)
+
+|gT| retains its default behaviour of moving backward [count] tabs
+
+A new `<leader>gt` map replaces the old |gt| behaviour of jumping to a tab by
+number (so,   `3<leader>gt`   moves to tab 3)
+
+`<leader>T` jumps to the alternate tab. This allows quick switching
+between current tabs like |ctrl-6| switches between current buffers.
+
+
+Template From: https://github.com/dahu/Area-41/
+ vim:tw=78:ts=8:ft=help:norl:
