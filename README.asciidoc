@@ -1,5 +1,21 @@
-tabby
+Tabby
+-----
 
-Using Vim's Tabs the Right Way
+__Tabbing Righteously__
 
+TIP: If you like Tabby and want to share the W00t!, I'm grateful for
+https://www.gittip.com/bairuidahu/[tips] or
+http://of-vim-and-vigor.blogspot.com/[beverages].
 
+Fixes the non-orthogonal behaviour of `gt` vs `gT`.
+
+`gt` now moves forward `[count]` number of tabs (default 1)
+(so,   `3gt`   moves forward 3 tabs)
+
+`gT` retains its default behaviour of moving backward `[count]` tabs
+
+A new `<leader>gt` map replaces the old `gt` behaviour of jumping to a tab by
+number (so,   `3<leader>gt`   moves to tab 3)
+
+`<leader>T` jumps to the alternate tab. This allows quick switching
+between current tabs like `ctrl-6` switches between current buffers.
